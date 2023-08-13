@@ -7,7 +7,11 @@ body {
     width: 100vw;
     height: 100vh;
     padding: 10px;
-    background-color: cadetblue;
+    background-image: url(../img/bkg-img-4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* background-color: cadetblue; */
     font-family: 'Roboto', sans-serif;
     padding:  env(safe-area-inset-top);
 }
@@ -21,13 +25,15 @@ body {
     flex-wrap: nowrap;
     max-width: 720px;
     padding: 5px;
+    padding-bottom: 50px;
 }
 #imagem {
-    background-image: url(../img/forca-1.jpg);
-    width: 234px;
-    height: 234px;
+    background-image: url(../img/mario-01.png );
+    width: 400px;
+    height: 400px;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
 }
 #palavra-forca{
     display: flex;
@@ -41,7 +47,7 @@ body {
 .letras {
     width: 25px;
     text-align: center;
-    border-bottom: 2px solid brown;
+    border-bottom: 3px solid  rgb(30, 65, 66);
     color: white;
     margin: 5px;
     font-size: 1.6rem;
@@ -60,7 +66,7 @@ body {
 
 button{
     cursor: pointer;
-    /* box-shadow: 0 2px 4px dimgray; */
+    box-shadow: 0 2px 4px dimgray;
     border-radius: 8%;
     border: none;
     color: rgb(30, 65, 66);
@@ -69,7 +75,8 @@ button{
     font-size: 1.2rem;
 }
 button:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+    background-color: gainsboro;
 }
 #tecla-A {
     grid-column: 2 / span 3;
@@ -86,13 +93,13 @@ button:hover {
     font-size: 1.2rem;
     font-weight: 600;
 }
-/* @media screen and (min-width: 321px){
+@media screen and (min-width: 321px){
     .teclas button{
         width: 25px;
         height: 25px;
     } 
     #dica { 
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 }
 @media screen and (min-width: 376px){
@@ -108,7 +115,7 @@ button:hover {
         width: 18px;
     }
     #dica {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 }
 @media screen and (min-width: 426px){
@@ -140,6 +147,6 @@ button:hover {
         width: 35px;
     }
     #dica {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
-} */
+}
