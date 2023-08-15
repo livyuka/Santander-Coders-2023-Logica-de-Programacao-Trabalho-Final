@@ -33,7 +33,9 @@ const palavras = [
         dica: "terror do programador"
     },
 ];
-
+// Iniciando o jogo.
+criarPalavraSecreta();
+montarPalavraNaTela();
 function criarPalavraSecreta() {
     const indexPalavra = parseInt(Math.random() * palavras.length);
     palavraSecretaSorteada = palavras[indexPalavra].nome.toUpperCase();
@@ -54,18 +56,27 @@ function montarPalavraNaTela() {
 }
 
 function verificaLetraEscolhida(letra) {
-    if (tentativas !== 0) {
-        mudarStyleLetra("tecla-" + letra);
+    document.getElementById("tecla-" + letra).disabled = true;
+    if (tentativas > 0) {
+        mudarStyleLetra("tecla-" + letra, false);
         validarLetra(letra);
+        montarPalavraNaTela();
         comparaListas();
     } else {
-        console.log("Acabou suas chances");
+        setTimeout(() => {
+            alert(`Acabaram suas chances! A palavra era: ${palavraSecretaSorteada}.`);
+        }, 100);
     }
 }
 
-function mudarStyleLetra(tecla) {
-    document.getElementById(tecla).style.background = "#4682B4";
-    document.getElementById(tecla).style.color = "#ffff";
+function mudarStyleLetra(tecla,verificarLetra) {
+    if(verificarLetra == false) {
+        document.getElementById(tecla).style.background = "#d5d5d5";
+        document.getElementById(tecla).style.color = "#ffff";
+    }else{
+        document.getElementById(tecla).style.background = "#4682B4";
+        document.getElementById(tecla).style.color = "#ffff";
+    }
 }
 
 function validarLetra(letra) {
@@ -74,14 +85,29 @@ function validarLetra(letra) {
         if (palavraSecretaSorteada[i] === letra) {
             listaDinamica[i] = letra;
             acertou = true;
+            mudarStyleLetra("tecla-" + letra, true);
         }
     }
-
-    montarPalavraNaTela();
-    
     if (!acertou) {
-        console.log("errou a letra");
+        console.log('Tentativas: ' + tentativas);
         tentativas--;
+        console.log('Tentativas: ' + tentativas);
+        if (tentativas === 0) {
+            setTimeout(() => {
+            alert(`Acabaram suas chances! A palavra era: ${palavraSecretaSorteada}`);
+        }, 100);
+            animarBtnReiniciar();
+            // document.getElementById("tecla-reload").animate(
+            //     [{transform: 'scale(1)'},
+            //     {transform: 'scale(1.2)'}
+            //     ],
+            //     {duration: 900,
+            //     iterations: Infinity,
+            //     direction: 'alternate'
+            //     }
+            // )
+        }
+        imagemMario();
     }
 }
 
@@ -89,24 +115,63 @@ function comparaListas() {
     if (palavraSecretaSorteada === listaDinamica.join("")) {
         setTimeout(() => {
             alert("Parabéns! Você acertou a palavra: " + palavraSecretaSorteada);
-            resetarJogo();
-        }, 500);
+        }, 100);
+        animarBtnReiniciar();
+        // document.getElementById("tecla-reload").animate(
+        //     [{transform: 'scale(1)'},
+        //     {transform: 'scale(1.2)'}
+        //     ],
+        //     {duration: 900,
+        //     iterations: Infinity,
+        //     direction: 'alternate'
+        //     }
+        // )
     }
 }
 
-function resetarJogo() {
-    tentativas = 6;
-    listaDinamica = [];
-    criarPalavraSecreta();
-    montarPalavraNaTela();
-    // Resetando o estilo dos botões para o estado inicial
-    const teclas = document.querySelectorAll("#teclado button");
-    teclas.forEach(tecla => {
-        tecla.style.background = "";
-        tecla.style.color = "";
-    });
+function imagemMario() {
+    switch(tentativas){
+        case 5:
+            document.getElementById("imagem").style.backgroundImage = "url('../img/mario-02.png')";
+            break;
+        case 4:
+            document.getElementById("imagem").style.backgroundImage = "url('../img/mario-03.png')";
+            break;
+        case 3:
+            document.getElementById("imagem").style.backgroundImage = "url('../img/mario-04.png')";
+            break;
+        case 2:
+            document.getElementById("imagem").style.backgroundImage = "url('../img/mario-05.png')";
+            break;
+        case 1:
+            document.getElementById("imagem").style.backgroundImage = "url('../img/mario-06.png')";
+            break;
+        case 0:
+            document.getElementById("imagem").style.backgroundImage = "url('../img/mario-07.png')";
+            break;
+        default:
+            document.getElementById("imagem").style.backgroundImage = "url('../img/mario-01.png')";
+            break;
+    }
 }
 
-// Iniciando o jogo.
-criarPalavraSecreta();
-montarPalavraNaTela();
+function animarBtnReiniciar() {
+    document.getElementById("tecla-reload").style.backgroundColor = '#89bae2'
+    document.getElementById("tecla-reload").animate(
+        [{transform: 'scale(1)'},
+        {transform: 'scale(1.2)'}
+        ],
+        {duration: 900,
+        iterations: Infinity,
+        direction: 'alternate'
+        }
+    )
+}
+
+const reiniciar = document.getElementById("tecla-reload");
+reiniciar.addEventListener("click", function() {
+    location.reload();
+});
+
+
+
