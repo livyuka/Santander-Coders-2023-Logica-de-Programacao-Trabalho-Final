@@ -97,15 +97,6 @@ function validarLetra(letra) {
             alert(`Acabaram suas chances! A palavra era: ${palavraSecretaSorteada}`);
         }, 100);
             animarBtnReiniciar();
-            // document.getElementById("tecla-reload").animate(
-            //     [{transform: 'scale(1)'},
-            //     {transform: 'scale(1.2)'}
-            //     ],
-            //     {duration: 900,
-            //     iterations: Infinity,
-            //     direction: 'alternate'
-            //     }
-            // )
         }
         imagemMario();
     }
@@ -117,15 +108,6 @@ function comparaListas() {
             alert("Parabéns! Você acertou a palavra: " + palavraSecretaSorteada);
         }, 100);
         animarBtnReiniciar();
-        // document.getElementById("tecla-reload").animate(
-        //     [{transform: 'scale(1)'},
-        //     {transform: 'scale(1.2)'}
-        //     ],
-        //     {duration: 900,
-        //     iterations: Infinity,
-        //     direction: 'alternate'
-        //     }
-        // )
     }
 }
 
