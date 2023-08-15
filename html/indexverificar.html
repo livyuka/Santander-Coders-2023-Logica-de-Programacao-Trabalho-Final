@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo da Forca</title>
+    <title>Document</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <div class="container">
         <div id="imagem">
         </div>
         <div id="palavra-forca">
-            <!-- O conteúdo será preenchido dinamicamente com base na palavra sorteada -->
+            <div class="letras"></div>
+            <div class="letras"></div>
+            <div class="letras"></div>
+            <div class="letras"></div>
+            <div class="letras"></div>
+            <div class="letras"></div>
         </div>
         <div id="dica">DICA: </div>
         <div id="teclado">
@@ -46,12 +49,15 @@
             <button id="tecla-B" onclick="verificaLetraEscolhida('B')">B</button>
             <button id="tecla-N" onclick="verificaLetraEscolhida('N')">N</button>
             <button id="tecla-M" onclick="verificaLetraEscolhida('M')">M</button>
-            <button id="tecla-reload" onclick="reloadGame()"><i class="fa-solid fa-rotate-right"></i></button>
+            <button id="tecla-reload" onclick=""><i class="fa-solid fa-rotate-right"></i></button>
+            
+            <!-- início modal -->
+            
+            <!-- fim modal -->
         </div>
         <div id="footer"></div>
-    </div>
-    <script src="../js/func-verificapalavra.js"></script>
-    <script src="https://kit.fontawesome.com/3423b72630.js" crossorigin="anonymous"></script>
-</body>
-
-</html>
+        
+        <script src="../js/func-verificapalavra.js"></script>
+        <script src="https://kit.fontawesome.com/3423b72630.js" crossorigin="anonymous"></script>
+    </body>
+    </html>
