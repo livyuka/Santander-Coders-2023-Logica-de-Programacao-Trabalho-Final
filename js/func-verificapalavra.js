@@ -71,10 +71,10 @@ function verificaLetraEscolhida(letra) {
 
 function mudarStyleLetra(tecla,verificarLetra) {
     if(verificarLetra == false) {
-        document.getElementById(tecla).style.background = "#d5d5d5";
+        document.getElementById(tecla).style.background = "#ff9c9c";
         document.getElementById(tecla).style.color = "#ffff";
     }else{
-        document.getElementById(tecla).style.background = "#4682B4";
+        document.getElementById(tecla).style.background = "#a0cf6d";
         document.getElementById(tecla).style.color = "#ffff";
     }
 }
@@ -138,7 +138,7 @@ function imagemMario() {
 }
 
 function animarBtnReiniciar() {
-    document.getElementById("tecla-reload").style.backgroundColor = '#89bae2'
+    document.getElementById("tecla-reload").style.backgroundColor = '#6ed134'
     document.getElementById("tecla-reload").animate(
         [{transform: 'scale(1)'},
         {transform: 'scale(1.2)'}
