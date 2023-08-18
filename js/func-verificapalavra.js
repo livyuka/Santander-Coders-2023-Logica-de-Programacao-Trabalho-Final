@@ -36,6 +36,7 @@ const palavras = [
 // Iniciando o jogo.
 criarPalavraSecreta();
 montarPalavraNaTela();
+
 function criarPalavraSecreta() {
     const indexPalavra = parseInt(Math.random() * palavras.length);
     palavraSecretaSorteada = palavras[indexPalavra].nome.toUpperCase();
@@ -62,10 +63,6 @@ function verificaLetraEscolhida(letra) {
         validarLetra(letra);
         montarPalavraNaTela();
         comparaListas();
-    } else {
-        setTimeout(() => {
-            alert(`Acabaram suas chances! A palavra era: ${palavraSecretaSorteada}.`);
-        }, 100);
     }
 }
 
@@ -89,12 +86,10 @@ function validarLetra(letra) {
         }
     }
     if (!acertou) {
-        console.log('Tentativas: ' + tentativas);
         tentativas--;
-        console.log('Tentativas: ' + tentativas);
         if (tentativas === 0) {
             setTimeout(() => {
-            alert(`Acabaram suas chances! A palavra era: ${palavraSecretaSorteada}`);
+            alert(`Acabaram suas chances... A palavra era: ${palavraSecretaSorteada}`);
         }, 100);
             animarBtnReiniciar();
         }
