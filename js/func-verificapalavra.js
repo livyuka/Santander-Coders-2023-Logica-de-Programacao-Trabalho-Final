@@ -6,11 +6,11 @@ let palavraSecretaSorteada;
 const palavras = [
     {
         nome: "irlanda",
-        dica: "Lugares"
+        dica: "País"
     },
     {
         nome: "Equador",
-        dica: "Lugares"
+        dica: "País"
     },
     {
         nome: "sol",
@@ -90,7 +90,7 @@ function validarLetra(letra) {
         if (tentativas === 0) {
             setTimeout(() => {
             alert(`Acabaram suas chances... A palavra era: ${palavraSecretaSorteada}`);
-        }, 100);
+        }, 2000);
             animarBtnReiniciar();
         }
         imagemMario();
@@ -101,7 +101,7 @@ function comparaListas() {
     if (palavraSecretaSorteada === listaDinamica.join("")) {
         setTimeout(() => {
             alert("Parabéns! Você acertou a palavra: " + palavraSecretaSorteada);
-        }, 100);
+        }, 2000);
         animarBtnReiniciar();
     }
 }
@@ -109,25 +109,25 @@ function comparaListas() {
 function imagemMario() {
     switch(tentativas){
         case 5:
-            document.getElementById("imagem").style.backgroundImage = "url('../img/mario-02.png')";
+            document.getElementById("imagem").style.backgroundImage = "url('./img/mario-02.png')";
             break;
         case 4:
-            document.getElementById("imagem").style.backgroundImage = "url('../img/mario-03.png')";
+            document.getElementById("imagem").style.backgroundImage = "url('./img/mario-03.png')";
             break;
         case 3:
-            document.getElementById("imagem").style.backgroundImage = "url('../img/mario-04.png')";
+            document.getElementById("imagem").style.backgroundImage = "url('./img/mario-04.png')";
             break;
         case 2:
-            document.getElementById("imagem").style.backgroundImage = "url('../img/mario-05.png')";
+            document.getElementById("imagem").style.backgroundImage = "url('./img/mario-05.png')";
             break;
         case 1:
-            document.getElementById("imagem").style.backgroundImage = "url('../img/mario-06.png')";
+            document.getElementById("imagem").style.backgroundImage = "url('./img/mario-06.png')";
             break;
         case 0:
-            document.getElementById("imagem").style.backgroundImage = "url('../img/mario-07.png')";
+            document.getElementById("imagem").style.backgroundImage = "url('./img/mario-07.png')";
             break;
         default:
-            document.getElementById("imagem").style.backgroundImage = "url('../img/mario-01.png')";
+            document.getElementById("imagem").style.backgroundImage = "url('./img/mario-01.png')";
             break;
     }
 }
