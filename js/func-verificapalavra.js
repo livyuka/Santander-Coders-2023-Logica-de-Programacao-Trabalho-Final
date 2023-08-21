@@ -6,11 +6,11 @@ let palavraSecretaSorteada;
 const palavras = [
     {
         nome: "irlanda",
-        dica: "Lugares"
+        dica: "País"
     },
     {
         nome: "Equador",
-        dica: "Lugares"
+        dica: "País"
     },
     {
         nome: "sol",
@@ -90,7 +90,7 @@ function validarLetra(letra) {
         if (tentativas === 0) {
             setTimeout(() => {
             alert(`Acabaram suas chances... A palavra era: ${palavraSecretaSorteada}`);
-        }, 100);
+        }, 2000);
             animarBtnReiniciar();
         }
         imagemMario();
@@ -101,7 +101,7 @@ function comparaListas() {
     if (palavraSecretaSorteada === listaDinamica.join("")) {
         setTimeout(() => {
             alert("Parabéns! Você acertou a palavra: " + palavraSecretaSorteada);
-        }, 100);
+        }, 2000);
         animarBtnReiniciar();
     }
 }
