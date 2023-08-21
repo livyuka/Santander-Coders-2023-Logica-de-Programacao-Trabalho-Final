@@ -149,6 +149,3 @@ const reiniciar = document.getElementById("tecla-reload");
 reiniciar.addEventListener("click", function() {
     location.reload();
 });
-
-
-
