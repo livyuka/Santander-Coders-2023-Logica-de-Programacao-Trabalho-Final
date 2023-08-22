@@ -6,6 +6,8 @@
 ## 📄 Resumo do Projeto
 Criamos um jogo da forca com JavaScript puro, além do layout da página todo em CSS puro, visando aplicar os conceitos de Lógica de Programação aprendidos no curso.
 
+Vamos jogar? 👉 [Jogo da Forca](https://livyuka.github.io/Santander-Coders-2023-Logica-de-Programacao-Trabalho-Final/ "Jogo da Forca")
+
 ## 💻 Equipe
 | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/71394131?v=4" width=115><br><sub>Livia Tanaka</sub>](https://github.com/livyuka) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/109250005?v=4" width=115><br><sub>Daiana Bellatto</sub>](https://github.com/DayBellatto) | 
 | :---: | :---: |
